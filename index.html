@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>music</title>
+    <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+<div id="mainContent">
+<!--头部 歌手 歌名 更多按钮-->
+<header>
+<span id="sing">太早</span>
+<span id="singer">刘允乐</span>
+    <input type="button" id="btnMore" value="更多">
+</header>
+<!--专辑封面、旋转动画 歌词-->
+<main>
+
+<div id="songPic">
+</div>
+    <div id="lrc">-此处暂无歌词-</div>
+    <!--进度条 控制按钮-->
+    <div id="processBar">
+        <audio  id="music">
+            <source src="res/audio/testSong.mp3" type="audio/mp3"/>
+        </audio>
+        <span id="currentTime" class="time">00:00</span>
+        <div id="totalBar">
+            <div id="currentBar"></div>
+        </div>
+        <span id="totalTime" class="time"></span>
+    </div>
+
+    <div id="btn">
+        <button id="preBtn" class="smallBtn"></button>
+            <button id="controlBtn"></button>
+            <button id="nextBtn" class="smallBtn"></button>
+    </div>
+</main>
+
+</main>
+<!--作者-->
+<footer>
+<span id="writer">From Mercy</span>
+</footer>
+</div>
+<script type="text/javascript" src="static/js/lib/jquery-3.3.1.js"></script>
+<script type="text/javascript" src="static/js/lib/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="static/js/lib/bootstrap.js"></script>
+<script type="text/javascript" src="static/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    height:100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/*播放器属性*/
+#mainContent{
+    width: 510px;
+    height: 880px;
+    background-color: #000000;
+    font-family:Arial;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow:#362F2F 10px 10px 10px ;
+}
+header{
+    width: 100%;
+    height: 150px;
+}
+/*歌名*/
+#sing{
+    color: #ffffff;
+    font-size: 41px;
+    height: 57px;
+    min-width: 82px;
+    position: relative;
+    top: 13px;
+    left: 35px;
+    
+}
+
+/*歌手*/
+#singer{
+    color: #A79F97;
+    font-size: 20px;
+    position: relative;
+    top: 58px;
+    left: -48px;
+}
+/*more*/
+#btnMore{
+    height: 40px;
+    width: 40px;
+    border: none;
+    position: relative;
+    top: 3px;
+    left: 325px;
+    background-color: transparent;
+    background-image: url("../../res/image/more.png");
+}
+main{
+    margin-top: 20px;
+    height: 600px;
+
+}
+/*songPic*/
+#songPic{
+    width: 332px;
+    height: 332px;
+    background-image: url("../../res/image/songPic.png");
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: songPic 15s linear infinite;
+    box-shadow: #B5ADA1 0px 0px 200px 0px;
+}
+/*封面旋转*/
+@keyframes songPic {
+    from{
+        transform:rotate(0deg) ;
+    }
+    to{
+        transform:rotate(360deg) ;
+    }
+
+}
+
+#lrc{
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 60px;
+    text-align: center;
+}
+
+/*时间*/
+.time{
+    height: 22px;
+    width:50px;
+    font-size: 20px;
+    color: #707070;
+    float: left;
+}
+
+/*进度条*/
+#totalBar{
+    width: 330px;
+    height: 3px;
+    background-color: #707070;
+    border-radius: 1px;
+    float: left;
+    margin: 10px 20px;
+}
+#processBar{
+    height: 20px;
+    padding-left: 20px;
+    margin-top: 60px;
+    margin-bottom: 35px;
+}
+#currentBar{
+    width: 10px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/*按钮*/
+#btn{
+    height: 70px;
+    padding-left: 140px;
+}
+.smallBtn{
+    height:40px ;
+    width: 40px;
+    border: none;
+    position: relative;
+    bottom: 19px;
+    background-color: transparent;
+
+}
+#controlBtn{
+    width: 80px;
+    height: 80px;
+    border: none;
+    margin: 0 35px;
+    background-color: transparent;
+    background-image: url("../../res/pause.png");
+    background-size: contain;
+
+}
+#preBtn{
+    background-image: url("../../res/image/preSong.png");
+    background-size: contain;
+}
+#nextBtn{
+    background-image: url("../../res/image/nextSong.png");
+    background-size: contain;
+}
+/*作者*/
+footer{
+    text-align: center;
+    position: relative;
+    top: 90px;
+}
+#writer{
+    font-size: 14px;
+    color: #707070;
+}
