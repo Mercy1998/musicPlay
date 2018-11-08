@@ -9,10 +9,10 @@
 
 
 var audio;
-var duration;
+var duration;  //总时长
 var current;
-var currentTime;
-var fullTime;
+var currentTime;     //$对象
+var fullTime;      //$对象
 $(document).ready(function(){
     currentTime=$('#currentTime');
     fullTime=$('#totalTime');
@@ -52,5 +52,15 @@ function getCurrentTime(){
     m = m < 10 ? "0" + m : m;
     console.log(m,s);
     currentTime.text(m+":"+s).show();
+    //进度条
+    let currentBar = ($('#totalBar').width() / duration) * current;
 
+    $('#currentBar').css({
+            'width': currentBar + "px",
+        }
+    );
+if(current==duration){
+    document.getElementById('songPic').style.animationPlayState='paused';       //音乐停止 封面暂停转动
 }
+}
+
