@@ -163,3 +163,9 @@ footer{
     font-size: 14px;
     color: #707070;
 }
+
+/*歌曲列表*/
+#list{
+    color: #ffffff;
+    background-color: dimgrey;
+}

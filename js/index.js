@@ -18,16 +18,24 @@ var musicList=[
     {
         "sing":"太早",
         "singer":"刘允乐",
-        "src":"../res/audio/testSong.mp3"
+       // "songPic":""  专辑封面
+        "src":"res/audio/testSong.mp3"
     },{
         "sing":"我的梦",
         "singer":"张靓颖",
-        "src":"../res/audio/testSong2.mp3"
+        "src":"res/audio/testSong2.mp3"
+    },
+    {
+        "sing":"Mercy",
+        "singer":"未知",
+        "src":"res/audio/Mercy.mp3"
     }
 ];
 var songName;
 var singerName;
 var songIndex=0;
+
+
 $(document).ready(function(){
 
 /*歌手、歌名*/
@@ -49,12 +57,14 @@ $(document).ready(function(){
     $('#controlBtn').click(function(){
       if(audio.paused){
           audio.play();
-          $(this).css("background-image","url(../res/image/play.png");
-          document.getElementById('songPic').style.animationPlayState='running';       //音乐停止 封面暂停转动
+          $(this).css("background-image","url(res/image/pause.png)");
+          $(this).attr("title", "暂停播放");
+          document.getElementById('songPic').style.animationPlayState='running';       //音乐开始
 
       }else{
           audio.pause();
-          $(this).css("background-image","url(../res/image/pause.png");
+          $(this).attr("title", "开始播放");
+          $(this).css("background-image","url(res/image/play.png)");
           document.getElementById('songPic').style.animationPlayState='paused';       //音乐停止 封面暂停转动
       }
     });
@@ -68,9 +78,11 @@ $(document).ready(function(){
         else {
                 songIndex++;
                 console.log(songIndex);
+                songEnded();
                 changeSong();
                 audio.load();
                 audio.play();
+                document.getElementById('songPic').style.animationPlayState='running';       //音乐开始
             }
     }
     )
@@ -83,15 +95,51 @@ $(document).ready(function(){
             else {
                 songIndex--;
                 console.log(songIndex);
+                songEnded();
                 changeSong();
                 audio.load();
                 audio.play();
+                document.getElementById('songPic').style.animationPlayState='running';       //音乐开始
             }
         })
 
+//键盘事件
+    $(document).keydown(function(e){
+        var e = event || window.event;
+        var k = e.keyCode || e.which;
+        switch(k) {
+            case 13:
+                $('#controlBtn').click();
+                console.log("break");
 
+                break;
+            case 39:    //下一首
+                $('#nextBtn').click();
+                console.log("next");
+                break;
+            case 37:    //上一首
+                $('#preBtn').click();
+                console.log("next");
+                break;
+        }
+        return false;
+
+    })
+    //歌曲列表
+    var flag=false;
+    $('#btnMore').click(function(){
+        if(flag==false) {
+            createMusicList();
+            flag=true;
+        }else{
+            $('#list').empty();
+            flag=false;
+        }
+    })
 
 })
+
+
 function getFullTime(){
     duration=audio.duration;
     let m;
@@ -126,6 +174,7 @@ function getCurrentTime(){
     );
 if(current==duration){
    songEnded();
+   $('#nextBtn').click();
 }
 }
 //第一首歌曲载入
@@ -148,8 +197,16 @@ function changeSong(){
 }
 //歌曲结束
 function songEnded(){
-    audio.removeChild();
+    audioJq.empty();
+    audio.pause();
     currentTime.text("00:00");
     $('#currentBar').css("width","0px");
     document.getElementById('songPic').style.animationPlayState='paused';       //音乐停止 封面暂停转动
+}
+
+//歌曲列表
+function createMusicList(){
+for(let i=0;i<musicList.length;i++){
+    $('#list').append("<li value='"+i+"'>"+musicList[i].sing+"</li>");
+}
 }
