@@ -48,8 +48,8 @@ header{
     width: 40px;
     border: none;
     position: relative;
-    top: 3px;
-    left: 325px;
+    top: 10px;
+    left: 300px;
     background-color: transparent;
     background-image: url("../../res/image/more.png");
 }
