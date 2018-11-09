@@ -54,18 +54,24 @@ $(document).ready(function(){
 
       }else{
           audio.pause();
-          $(this).css("background-image","url(../res/pause.png");
+          $(this).css("background-image","url(../res/image/pause.png");
           document.getElementById('songPic').style.animationPlayState='paused';       //音乐停止 封面暂停转动
       }
     });
 
     //下一首
     $('#nextBtn').click(function(){
-        songIndex++;
-        console.log(songIndex);
-        changeSong();
-        audio.load();
-        audio.play();
+            if(songIndex==musicList.length-1){
+                alert("当前是最后一首歌曲");
+
+            }
+        else {
+                songIndex++;
+                console.log(songIndex);
+                changeSong();
+                audio.load();
+                audio.play();
+            }
     }
     )
     //上一首

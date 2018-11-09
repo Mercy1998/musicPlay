@@ -31,16 +31,20 @@ header{
     position: relative;
     top: 13px;
     left: 35px;
+    font-weight: 500;
     
 }
 
 /*歌手*/
 #singer{
+    display: inline-block;
+    height: 20px;
+    min-width: 82px;
     color: #A79F97;
     font-size: 20px;
     position: relative;
-    top: 58px;
-    left: -48px;
+    top: 10px;
+    left: 38px;
 }
 /*more*/
 #btnMore{
@@ -48,10 +52,10 @@ header{
     width: 40px;
     border: none;
     position: relative;
-    top: 10px;
-    left: 300px;
+    top: -40px;
+    left: 370px;
     background-color: transparent;
-    background-image: url("../../res/image/more.png");
+    background-image: url("../res/image/more.png");
 }
 main{
     margin-top: 20px;
@@ -62,7 +66,7 @@ main{
 #songPic{
     width: 332px;
     height: 332px;
-    background-image: url("../../res/image/songPic.png");
+    background-image: url("../res/image/songPic.png");
     border-radius: 50%;
     margin: 0 auto;
     animation: songPic 15s linear infinite;
@@ -137,16 +141,16 @@ main{
     border: none;
     margin: 0 35px;
     background-color: transparent;
-    background-image: url("../../res/pause.png");
+    background-image: url("../res/image/pause.png");
     background-size: contain;
 
 }
 #preBtn{
-    background-image: url("../../res/image/preSong.png");
+    background-image: url("../res/image/preSong.png");
     background-size: contain;
 }
 #nextBtn{
-    background-image: url("../../res/image/nextSong.png");
+    background-image: url("../res/image/nextSong.png");
     background-size: contain;
 }
 /*作者*/
