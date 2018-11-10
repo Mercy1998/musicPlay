@@ -165,7 +165,41 @@ footer{
 }
 
 /*歌曲列表*/
-#list{
+#more{
+    display: none;
     color: #ffffff;
-    background-color: dimgrey;
+    height: 300px;
+    width: 219px;
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    z-index: 3;
 }
+#listTitle{
+    border: 1px solid #707070;
+    background-color: #000000;
+    font-size: 22px;
+    padding: 10px 10px;
+}
+#listContent{
+    border: 1px solid #707070;
+}
+#list{
+    background-color: dimgrey;
+    opacity: 0.85;
+    height: 250px;
+    width: 219px;
+
+}
+#list li{
+    cursor: pointer;
+    font-size: 22px;
+    padding: 10px 15px;
+    font-weight: lighter;
+    border-bottom: 1px solid #B5ADA1;
+    list-style-type: none;
+}
+#list li:hover{
+    background-color: #000000;
+}
+

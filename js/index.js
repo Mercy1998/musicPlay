@@ -42,6 +42,9 @@ $(document).ready(function(){
        songName=$('#sing');
     singerName=$('#singer');
 
+    /*歌曲列表*/
+    createMusicList();
+    $('#listTitle').text("播放列表 ("+musicList.length+")");
     /*时间*/
     currentTime=$('#currentTime');
     fullTime=$('#totalTime');
@@ -128,13 +131,23 @@ $(document).ready(function(){
     //歌曲列表
     var flag=false;
     $('#btnMore').click(function(){
+
         if(flag==false) {
-            createMusicList();
+            $('#more').css("display","block")
             flag=true;
         }else{
-            $('#list').empty();
+            $('#more').css("display","none")
             flag=false;
         }
+    })
+    $('#list li').click(function(){
+        songIndex=$(this).val();
+        console.log(songIndex);
+        songEnded();
+        changeSong();
+        audio.load();
+        audio.play();
+        document.getElementById('songPic').style.animationPlayState='running';       //音乐开始
     })
 
 })
@@ -206,7 +219,8 @@ function songEnded(){
 
 //歌曲列表
 function createMusicList(){
-for(let i=0;i<musicList.length;i++){
-    $('#list').append("<li value='"+i+"'>"+musicList[i].sing+"</li>");
+for(var i=0;i<musicList.length;i++) {
+    $('#list').append("<li value='" + i + "'>" + musicList[i].sing + "</li>");
+    console.log(i);
 }
 }
