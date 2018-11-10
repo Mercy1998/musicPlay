@@ -196,7 +196,7 @@ footer{
     font-size: 22px;
     padding: 10px 15px;
     font-weight: lighter;
-    border-bottom: 1px solid #B5ADA1;
+    border-bottom: 2px solid rgba(112,112,112,0.9);
     list-style-type: none;
 }
 #list li:hover{
