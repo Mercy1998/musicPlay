@@ -1,8 +1,8 @@
 /**
  *
  * @authors Wang Yuanyuan
- * @date    2018-11-09
- * @version 1.1
+ * @date    2018-11-11
+ * @version 1.3
  *
  **/
 
@@ -41,10 +41,12 @@ var musicLists=null;
 
 //加载JSON数据
 $.getJSON('musicLists.json',function(data){
+    $.ajaxSettings.async = false;
     total=data.data.length;
     console.log(total);
     musicLists=data.data;
     console.log(musicLists[songIndex].sing);
+
     $(document).ready();
 })
 
@@ -159,6 +161,7 @@ $(document).ready(function(){
         }
     });
     $('#list li').click(function(){
+        $('#btnMore').click();
         songIndex=$(this).val();
         console.log(songIndex);
         songEnded();
