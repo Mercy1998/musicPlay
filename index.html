@@ -14,7 +14,7 @@
     <input type="button" id="btnMore" title="歌曲列表">
     <div id="more">
        <div id="listTitle"></div>
-        <div id="lisContent">
+        <div id="listContent">
             <ul id="list">
         </ul>
         </div>
@@ -33,9 +33,7 @@
         <audio  id="music">
         </audio>
         <span id="currentTime" class="time">00:00</span>
-        <div id="totalBar">
-            <div id="currentBar"></div>
-        </div>
+        <input type="range" name="totalProgress" id="totalBar" value="0" min="0" onchange="slideChange(this.value)">
         <span id="totalTime" class="time"></span>
     </div>
 

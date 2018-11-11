@@ -169,7 +169,7 @@ footer{
     display: none;
     color: #ffffff;
     height: 300px;
-    width: 219px;
+    width: 230px;
     float: right;
     margin-right: 10px;
     position: relative;
@@ -178,15 +178,19 @@ footer{
 #listTitle{
     border: 1px solid #707070;
     background-color: #000000;
+
     font-size: 22px;
     padding: 10px 10px;
 }
 #listContent{
-    border: 1px solid #707070;
-}
-#list{
     background-color: dimgrey;
     opacity: 0.85;
+    border: 1px solid #707070;
+    overflow-y:auto
+}
+#list{
+
+
     height: 250px;
     width: 219px;
 
@@ -201,5 +205,18 @@ footer{
 }
 #list li:hover{
     background-color: #000000;
+}
+
+
+/*range*/
+input[type=range]{
+    -webkit-appearance: none;
+    background: #707070 ;
+    background: -webkit-linear-gradient(#ffffff, #ffffff) no-repeat, #707070;
+    background-size: 0% 100%;
+}
+input[type=range]::-webkit-slider-thumb{
+    /*visibility: hidden;*/
+    cursor: pointer;
 }
 

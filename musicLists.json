@@ -1,0 +1,30 @@
+{
+  "data":[
+    {
+      "sing":"太早",
+      "singer":"刘允乐",
+      "src":"res/audio/testSong.mp3"
+    },{
+      "sing":"我的梦",
+      "singer":"张靓颖",
+      "src":"res/audio/testSong2.mp3"
+    },
+    {
+      "sing":"Mercy",
+      "singer":"未知",
+      "src":"res/audio/Mercy.mp3"
+    },{
+      "sing":"心做し",
+      "singer":"GUMI",
+      "src":"https://music.163.com/song/media/outer/url?id=478303470.mp3"
+    },{
+      "sing":"起风了",
+      "singer":"未知",
+      "src":"https://music.163.com/song/media/outer/url?id=461525011.mp3"
+    },{
+      "sing":"起风了",
+      "singer":"未知",
+      "src":"https://music.163.com/song/media/outer/url?id=461525011.mp3"
+    }
+  ]
+}
